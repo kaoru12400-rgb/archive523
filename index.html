@@ -28,7 +28,45 @@ display:none;
 
 <body>
 
-<h1>ARCHIVE 523</h1>
+<h1 id="title" onclick="secretClick()">
+ARCHIVE 523
+</h1>
+
+<p id="status"></p>
+
+<div id="hiddenLink" style="display:none; margin-top:20px;">
+<a href="https://drive.google.com/drive/mobile/folders/"
+   target="_blank">
+OPEN ARCHIVE
+</a>
+</div>
+
+<script>
+let clickCount = 0;
+
+function secretClick() {
+
+    clickCount++;
+
+    if(clickCount === 1){
+        document.getElementById("status").innerHTML =
+        "SCANNING...";
+    }
+
+    if(clickCount === 2){
+        document.getElementById("status").innerHTML =
+        "VERIFYING CLEARANCE...";
+    }
+
+    if(clickCount === 3){
+        document.getElementById("status").innerHTML =
+        "ACCESS GRANTED";
+
+        document.getElementById("hiddenLink").style.display =
+        "block";
+    }
+}
+</script>
 
 <p>Some files were never meant to be found.</p>
 
